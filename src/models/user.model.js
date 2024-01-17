@@ -45,6 +45,20 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    paymentMethodAdded:{
+      type:Boolean,
+      default:false
+    },
+    ip:{
+      type:String,
+    },
+    location:{
+      type:String,
+    },
+    vpnInstance:{
+      type:String,
+    }
   },
   {
     timestamps: true,

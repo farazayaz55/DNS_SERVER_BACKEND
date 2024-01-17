@@ -1,19 +1,14 @@
-var exec = require("child_process").exec;
-
-
 const userDatabase = [
     {
       email: 'farazayaz55@gmail.com',
       ip: '127.0.0.1',
       location: 'india',
-      ovpnConfig: 'india.ovpn',
       vpnInstance: null,
     },
     {
       email: 'farazayaz55@gmail.com',
       ip: '192.168.1.2',
       location: 'saudiarabia',
-      ovpnConfig: 'saudiarbia.ovpn',
       vpnInstance: null,
     },
   ];
@@ -39,17 +34,8 @@ const getIpForLocation = (location) => {
   return data[location];
 };
 
-// Function to establish OpenVPN connection
-const connectToVPN=(config)=> {
-
-  cmd = `openvpn --config ${config}`;
-  exec(cmd);
-
-  return `Connected to ${config}`;
-}
 
 module.exports={
     getUserByIP,
     getIpForLocation,
-    connectToVPN
 }

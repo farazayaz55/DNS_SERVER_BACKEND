@@ -2,7 +2,16 @@ const nodemailer = require('nodemailer');
 const config = require('../config/config');
 const logger = require('../config/logger');
 
-const transport = nodemailer.createTransport(config.email.smtp);
+// const transport = nodemailer.createTransport(config.email.smtp);
+
+const transport = nodemailer.createTransport({
+  service:"gmail",
+  auth:{
+    user:"farazayaz86@gmail.com",
+    pass:"WNPP2022SPRINGx"
+  }
+});
+
 /* istanbul ignore next */
 if (config.env !== 'test') {
   transport
